@@ -23,7 +23,24 @@ $ brew install azure-cli
 #### Login Azure
 ```
 $ az login
+
+$ az account list -o table
+Name            CloudName    SubscriptionId                        State    IsDefault
+--------------  -----------  ------------------------------------  -------  -----------
+shinyay         AzureCloud   aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee  Enabled  True
 ```
+
+```
+$ az account set --subscription <target subscription ID>
+```
+
+#### Install the Azure CLI extension
+```
+$ az extension add --name spring-cloud
+
+The installed extension 'spring-cloud' is in preview.
+```
+
 ## Installation
 
 ## Licence
