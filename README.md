@@ -50,7 +50,20 @@ The installed extension 'spring-cloud' is in preview.
 #### Fill out the form
 ![portal-filled](./images/portal-filled.png)
 
+- **Resource group**: `azure-spring-cloud`
+- **Service Instance Name**: `azure-spring-cloud-gs`
+
 - `Review and create` -> `Create`
+
+![created-instance](./images/created-instance.png)
+
+#### Configure the CLI to use Service Instance
+
+```
+$ az configure --defaults group=<RESOURCE_GROUP_NAME>
+$ az configure --defaults spring-cloud=<SERVICE_INSTANCE_NAME>
+$ az configure -l
+```
 
 ## Installation
 
