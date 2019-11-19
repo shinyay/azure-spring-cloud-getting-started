@@ -27,7 +27,7 @@ $ az login
 $ az account list -o table
 Name            CloudName    SubscriptionId                        State    IsDefault
 --------------  -----------  ------------------------------------  -------  -----------
-shinyay         AzureCloud   aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee  Enabled  True
+PA-syanagihara  AzureCloud   aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee  Enabled  True
 ```
 
 ```
@@ -40,6 +40,15 @@ $ az extension add --name spring-cloud
 
 The installed extension 'spring-cloud' is in preview.
 ```
+
+### 01. Create a Service Instance on the Azure portal
+
+- [Azure Portal for ASC](https://ms.portal.azure.com/#create/Microsoft.AppPlatform)
+
+![portal](./images/portal-default.png)
+
+#### Fill out the form
+
 
 ## Installation
 
