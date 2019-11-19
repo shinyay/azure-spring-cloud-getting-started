@@ -1,4 +1,4 @@
-# Name
+# Azure Spring Cloud Getting Started
 
 Overview
 
@@ -14,7 +14,16 @@ Overview
 ## Requirement
 
 ## Usage
-
+### 00. Prerequisite
+#### Install Azure CLI
+```
+$ brew update
+$ brew install azure-cli
+```
+#### Login Azure
+```
+$ az login
+```
 ## Installation
 
 ## Licence
