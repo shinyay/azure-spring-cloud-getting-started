@@ -48,7 +48,9 @@ The installed extension 'spring-cloud' is in preview.
 ![portal](./images/portal-default.png)
 
 #### Fill out the form
+![portal-filled](./images/portal-filled.png)
 
+- `Review and create` -> `Create`
 
 ## Installation
 
