@@ -79,6 +79,7 @@ $ az configure -l
 ![create-app-basic](images/create-app-basic.png)
 
 #### Deploy a First App
+##### By GUI
 ```
 $ az spring-cloud app deploy -n hello-azure --jar-path hello-azure/build/libs/hello-azure-0.0.1-SNAPSHOT.jar
 ```
@@ -126,6 +127,120 @@ Command group 'spring-cloud' is in preview. It may be changed/removed in a futur
   "type": "Microsoft.AppPlatform/Spring/apps/deployments"
 }
 ```
+
+##### By CLI
+```
+$ az spring-cloud app create -n hello-azure -g azure-spring-cloud
+```
+
+```json
+Command group 'spring-cloud' is in preview. It may be changed/removed in a future release.
+{
+  "id": "/subscriptions/7accdeff-e6fd-4e03-839a-9011201fdea9/resourceGroups/azure-spring-cloud/providers/Microsoft.AppPlatform/Spring/azure-spring-cloud-gs/apps/hello-azure",
+  "name": "hello-azure",
+  "properties": {
+    "activeDeployment": {
+      "id": "/subscriptions/7accdeff-e6fd-4e03-839a-9011201fdea9/resourceGroups/azure-spring-cloud/providers/Microsoft.AppPlatform/Spring/azure-spring-cloud-gs/apps/hello-azure/deployments/default",
+      "name": "default",
+      "properties": {
+        "active": true,
+        "appName": "hello-azure",
+        "createdTime": null,
+        "deploymentSettings": {
+          "cpu": 1,
+          "environmentVariables": null,
+          "instanceCount": 1,
+          "jvmOptions": null,
+          "memoryInGb": 1,
+          "runtimeVersion": "Java_8"
+        },
+        "instances": [
+          {
+            "discoveryStatus": "DOWN",
+            "name": "hello-azure-default-11-84849db567-wch8n",
+            "reason": "Not ready for connecting",
+            "status": "Starting"
+          }
+        ],
+        "provisioningState": "Succeeded",
+        "source": {
+          "artifactSelector": null,
+          "relativePath": "<default>",
+          "type": "Jar",
+          "version": null
+        },
+        "status": "Upgrading"
+      },
+      "resourceGroup": "azure-spring-cloud",
+      "type": "Microsoft.AppPlatform/Spring/apps/deployments"
+    },
+    "activeDeploymentName": "default",
+    "createdTime": "2019-11-21T12:10:32.443000+00:00",
+    "persistentDisk": {
+      "mountPath": "/persistent",
+      "sizeInGb": 0,
+      "usedInGb": 0
+    },
+    "provisioningState": "Succeeded",
+    "public": false,
+    "temporaryDisk": {
+      "mountPath": "/tmp",
+      "sizeInGb": 5
+    },
+    "url": null
+  },
+  "resourceGroup": "azure-spring-cloud",
+  "type": "Microsoft.AppPlatform/Spring/apps"
+}
+```
+```
+$ az spring-cloud app deploy -n hello-azure -g azure-spring-cloud --jar-path hello-azure/build/libs/hello-azure-0.0.1-SNAPSHOT.jar
+```
+```json
+Command group 'spring-cloud' is in preview. It may be changed/removed in a future release.
+{
+  "id": "/subscriptions/7accdeff-e6fd-4e03-839a-9011201fdea9/resourceGroups/azure-spring-cloud/providers/Microsoft.AppPlatform/Spring/azure-spring-cloud-gs/apps/hello-azure/deployments/default",
+  "name": "default",
+  "properties": {
+    "active": true,
+    "appName": "hello-azure",
+    "createdTime": null,
+    "deploymentSettings": {
+      "cpu": 1,
+      "environmentVariables": null,
+      "instanceCount": 1,
+      "jvmOptions": null,
+      "memoryInGb": 1,
+      "runtimeVersion": "Java_8"
+    },
+    "instances": [
+      {
+        "discoveryStatus": "DOWN",
+        "name": "hello-azure-default-11-55765d59bd-2tlrb",
+        "reason": null,
+        "status": "Running"
+      },
+      {
+        "discoveryStatus": "UP",
+        "name": "hello-azure-default-11-84849db567-wch8n",
+        "reason": null,
+        "status": "Retiring"
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "source": {
+      "artifactSelector": null,
+      "relativePath": "resources/453cde82348c45cdd99ebc1614151706fd9b2d00c8727dcdeb4a9150d0e82a74-2019112112-389a331f-15ab-4093-a7ad-65f0ec63a8a8",
+      "type": "Jar",
+      "version": null
+    },
+    "status": "Upgrading"
+  },
+  "resourceGroup": "azure-spring-cloud",
+  "type": "Microsoft.AppPlatform/Spring/apps/deployments"
+}
+```
+
 
 #### Running App
 
