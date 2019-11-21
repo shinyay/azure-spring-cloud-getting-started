@@ -249,7 +249,15 @@ Command group 'spring-cloud' is in preview. It may be changed/removed in a futur
 ```
 $ curl <TEST_ENDPOINT>
 ```
+### 03.Query App logs
+`Log Analytics Workspace` -> `Display Logs`
 
+- Query
+```
+AppPlatformLogsforSpring
+| where AppName == "hello-azure"
+| limit 50
+```
 
 ## Installation
 
