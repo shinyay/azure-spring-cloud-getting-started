@@ -127,6 +127,15 @@ Command group 'spring-cloud' is in preview. It may be changed/removed in a futur
 }
 ```
 
+#### Running App
+
+![running-app](images/running-app.png)
+
+```
+$ curl <TEST_ENDPOINT>
+```
+
+
 ## Installation
 
 ## Licence
