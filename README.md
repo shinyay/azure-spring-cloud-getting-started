@@ -66,7 +66,17 @@ $ az configure -l
 ```
 
 ### 02. Create a First Simple App
+`Azure Spring Cloud Resource Group` -> `Create App`
+
 ![create-app](images/create-app.png)
+
+- App name
+- Java environment
+- CPU
+- Memory/GB
+- App Instance Count
+
+![create-app-basic](images/create-app-basic.png)
 
 ## Installation
 
