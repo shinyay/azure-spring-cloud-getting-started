@@ -78,6 +78,55 @@ $ az configure -l
 
 ![create-app-basic](images/create-app-basic.png)
 
+#### Deploy a First App
+```
+$ az spring-cloud app deploy -n hello-azure --jar-path hello-azure/build/libs/hello-azure-0.0.1-SNAPSHOT.jar
+```
+```json
+Command group 'spring-cloud' is in preview. It may be changed/removed in a future release.
+{
+  "id": "/subscriptions/7accdeff-e6fd-4e03-839a-9011201fdea9/resourceGroups/azure-spring-cloud/providers/Microsoft.AppPlatform/Spring/azure-spring-cloud-gs/apps/hello-azure/deployments/default",
+  "name": "default",
+  "properties": {
+    "active": true,
+    "appName": "hello-azure",
+    "createdTime": null,
+    "deploymentSettings": {
+      "cpu": 1,
+      "environmentVariables": null,
+      "instanceCount": 1,
+      "jvmOptions": null,
+      "memoryInGb": 1,
+      "runtimeVersion": "Java_8"
+    },
+    "instances": [
+      {
+        "discoveryStatus": "DOWN",
+        "name": "hello-azure-default-11-6c776599bc-db5wl",
+        "reason": null,
+        "status": "Running"
+      },
+      {
+        "discoveryStatus": "UP",
+        "name": "hello-azure-default-11-d9d55fcbd-2gbhw",
+        "reason": null,
+        "status": "Retiring"
+      }
+    ],
+    "provisioningState": "Succeeded",
+    "source": {
+      "artifactSelector": null,
+      "relativePath": "resources/453cde82348c45cdd99ebc1614151706fd9b2d00c8727dcdeb4a9150d0e82a74-2019112111-1fdc2c6e-905f-41ba-bf2c-d809f891f523",
+      "type": "Jar",
+      "version": null
+    },
+    "status": "Upgrading"
+  },
+  "resourceGroup": "azure-spring-cloud",
+  "type": "Microsoft.AppPlatform/Spring/apps/deployments"
+}
+```
+
 ## Installation
 
 ## Licence
