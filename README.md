@@ -45,17 +45,17 @@ The installed extension 'spring-cloud' is in preview.
 
 - [Azure Portal for ASC](https://ms.portal.azure.com/#create/Microsoft.AppPlatform)
 
-![portal](./images/portal-default.png)
+![portal](images/portal-default.png)
 
 #### Fill out the form
-![portal-filled](./images/portal-filled.png)
+![portal-filled](images/portal-filled.png)
 
 - **Resource group**: `azure-spring-cloud`
 - **Service Instance Name**: `azure-spring-cloud-gs`
 
 - `Review and create` -> `Create`
 
-![created-instance](./images/created-instance.png)
+![created-instance](images/created-instance.png)
 
 #### Configure the CLI to use Service Instance
 
@@ -64,6 +64,9 @@ $ az configure --defaults group=<RESOURCE_GROUP_NAME>
 $ az configure --defaults spring-cloud=<SERVICE_INSTANCE_NAME>
 $ az configure -l
 ```
+
+### 02. Create a First Simple App
+![create-app](images/create-app.png)
 
 ## Installation
 
