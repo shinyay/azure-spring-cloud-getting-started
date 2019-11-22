@@ -5,7 +5,7 @@ set -g ARTIFACT_ID hello-azure
 set -g NAME $ARTIFACT_ID
 set -g DESCRIPTION "Sample project for Spring Boot"
 set -g PACKAGE $GROUP_ID
-set -g DEPENDENCY web,actuator
+set -g DEPENDENCY web,actuator,cloud-eureka,cloud-config-client
 
 curl https://start.spring.io/starter.zip --create-dirs -o ./spring.zip \
 	-d type=gradle-project \
