@@ -86,7 +86,7 @@ $ az spring-cloud app deploy -n hello-azure --jar-path hello-azure/build/libs/he
 ```json
 Command group 'spring-cloud' is in preview. It may be changed/removed in a future release.
 {
-  "id": "/subscriptions/7accdeff-e6fd-4e03-839a-9011201fdea9/resourceGroups/azure-spring-cloud/providers/Microsoft.AppPlatform/Spring/azure-spring-cloud-gs/apps/hello-azure/deployments/default",
+  "id": "/subscriptions/7accddff-e6fd-4e03-839a-9011223fdea9/resourceGroups/azure-spring-cloud/providers/Microsoft.AppPlatform/Spring/azure-spring-cloud-gs/apps/hello-azure/deployments/default",
   "name": "default",
   "properties": {
     "active": true,
@@ -136,11 +136,11 @@ $ az spring-cloud app create -n hello-azure -g azure-spring-cloud
 ```json
 Command group 'spring-cloud' is in preview. It may be changed/removed in a future release.
 {
-  "id": "/subscriptions/7accdeff-e6fd-4e03-839a-9011201fdea9/resourceGroups/azure-spring-cloud/providers/Microsoft.AppPlatform/Spring/azure-spring-cloud-gs/apps/hello-azure",
+  "id": "/subscriptions/7accddff-e6fd-4e03-839a-9011223fdea9/resourceGroups/azure-spring-cloud/providers/Microsoft.AppPlatform/Spring/azure-spring-cloud-gs/apps/hello-azure",
   "name": "hello-azure",
   "properties": {
     "activeDeployment": {
-      "id": "/subscriptions/7accdeff-e6fd-4e03-839a-9011201fdea9/resourceGroups/azure-spring-cloud/providers/Microsoft.AppPlatform/Spring/azure-spring-cloud-gs/apps/hello-azure/deployments/default",
+      "id": "/subscriptions/7accddff-e6fd-4e03-839a-9011223fdea9/resourceGroups/azure-spring-cloud/providers/Microsoft.AppPlatform/Spring/azure-spring-cloud-gs/apps/hello-azure/deployments/default",
       "name": "default",
       "properties": {
         "active": true,
@@ -199,7 +199,7 @@ $ az spring-cloud app deploy -n hello-azure -g azure-spring-cloud --jar-path hel
 ```json
 Command group 'spring-cloud' is in preview. It may be changed/removed in a future release.
 {
-  "id": "/subscriptions/7accdeff-e6fd-4e03-839a-9011201fdea9/resourceGroups/azure-spring-cloud/providers/Microsoft.AppPlatform/Spring/azure-spring-cloud-gs/apps/hello-azure/deployments/default",
+  "id": "/subscriptions/7accddff-e6fd-4e03-839a-9011223fdea9/resourceGroups/azure-spring-cloud/providers/Microsoft.AppPlatform/Spring/azure-spring-cloud-gs/apps/hello-azure/deployments/default",
   "name": "default",
   "properties": {
     "active": true,
@@ -261,20 +261,95 @@ AppPlatformLogsforSpring
 
 ### 04. Configure a Spring Cloud Config server
 ```
-$ az spring-cloud config-server git repo -h
+$ az spring-cloud config-server -h
 
 Group
-    az spring-cloud config-server git repo : Commands to manage Config Server git repository in
-    Azure Spring Cloud.
+    az spring-cloud config-server : Commands to manage Config Server in Azure Spring Cloud.
+
+Subgroups:
+    git   : Commands to manage Config Server git property in Azure Spring Cloud.
 
 Commands:
-    add    : Set add a new repositry of git property of Config Server.
-    list   : List all repositries of git property of Config Server.
-    remove : Remove an existing repositry of git property of Config Server.
-    update : Override an existing repositry of git property of Config Server, will totally override
-             the old one.
+    clear : Erase all settings in Config Server.
+    set   : Set Config Server from a yaml file.
+    show  : Show Config Server.
 ```
 
+```
+$ az spring-cloud config-server set -h
+
+Command
+    az spring-cloud config-server set : Set Config Server from a yaml file.
+
+Arguments
+    --config-file [Required] : A yaml file path for the configuration of Spring Cloud config server.
+    --name -n     [Required] : Name of Azure Spring Cloud.
+    --no-wait                : Do not wait for the long-running operation to finish.
+    --resource-group -g      : Name of resource group. You can configure the default group using `az
+                               configure --defaults group=<name>`.  Default: azure-spring-cloud.
+
+Global Arguments
+    --debug                  : Increase logging verbosity to show all debug logs.
+    --help -h                : Show this help message and exit.
+    --output -o              : Output format.  Allowed values: json, jsonc, none, table, tsv, yaml.
+                               Default: json.
+    --query                  : JMESPath query string. See http://jmespath.org/ for more information
+                               and examples.
+    --subscription           : Name or ID of subscription. You can configure the default
+                               subscription using `az account set -s NAME_OR_ID`.
+    --verbose                : Increase logging verbosity. Use --debug for full debug logs.
+```
+
+```
+$ az spring-cloud config-server set --name azure-spring-cloud-gs --config-file appliaction.yml
+
+{
+  "id": "/subscriptions/7accddff-e6fd-4e03-839a-9011223fdea9/resourceGroups/azure-spring-cloud/providers/Microsoft.AppPlatform/Spring/azure-spring-cloud-gs",
+  "location": "southeastasia",
+  "name": "azure-spring-cloud-gs",
+  "properties": {
+    "configServerProperties": {
+      "configServer": {
+        "gitProperty": {
+          "hostKey": null,
+          "hostKeyAlgorithm": null,
+          "label": null,
+          "password": null,
+          "privateKey": null,
+          "repositories": [],
+          "searchPaths": null,
+          "strictHostKeyChecking": null,
+          "uri": "https://github.com/shinyay/azure-spring-cloud-config-public.git",
+          "username": null
+        }
+      },
+      "error": null,
+      "state": "Succeeded"
+    },
+    "provisioningState": "Succeeded",
+    "serviceId": "4310b90d222d457c9d8fd5d15fc4d575",
+    "trace": {
+      "appInsightInstrumentationKey": null,
+      "enabled": false,
+      "error": null,
+      "state": "NotAvailable"
+    },
+    "version": 2
+  },
+  "resourceGroup": "azure-spring-cloud",
+  "tags": null,
+  "type": "Microsoft.AppPlatform/Spring"
+}
+```
+
+```
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/shinyay/azure-spring-cloud-config-public.git
+```
 
 ## Installation
 
