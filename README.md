@@ -249,7 +249,7 @@ Command group 'spring-cloud' is in preview. It may be changed/removed in a futur
 ```
 $ curl <TEST_ENDPOINT>
 ```
-### 03.Query App logs
+### 03. Query App logs
 `Log Analytics Workspace` -> `Display Logs`
 
 - Query
@@ -258,6 +258,23 @@ AppPlatformLogsforSpring
 | where AppName == "hello-azure"
 | limit 50
 ```
+
+### 04. Configure a Spring Cloud Config server
+```
+$ az spring-cloud config-server git repo -h
+
+Group
+    az spring-cloud config-server git repo : Commands to manage Config Server git repository in
+    Azure Spring Cloud.
+
+Commands:
+    add    : Set add a new repositry of git property of Config Server.
+    list   : List all repositries of git property of Config Server.
+    remove : Remove an existing repositry of git property of Config Server.
+    update : Override an existing repositry of git property of Config Server, will totally override
+             the old one.
+```
+
 
 ## Installation
 
