@@ -14,6 +14,7 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 repositories {
 	mavenCentral()
 	maven { url = uri("https://repo.spring.io/milestone") }
+	maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
 }
 
 extra["springCloudVersion"] = "Hoxton.RC2"
@@ -26,7 +27,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.springframework.cloud:spring-cloud-starter-config")
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
-	implementation("com.microsoft.azure:spring-cloud-starter-azure-spring-cloud-client")
+	implementation("com.microsoft.azure:spring-cloud-starter-azure-spring-cloud-client:2.1.0-SNAPSHOT")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
