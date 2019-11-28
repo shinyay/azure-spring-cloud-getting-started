@@ -81,7 +81,7 @@ $ az configure -l
 #### Deploy a First App
 ##### By GUI
 ```
-$ az spring-cloud app deploy -n hello-azure --jar-path hello-azure/build/libs/hello-azure-0.0.1-SNAPSHOT.jar
+$ az spring-cloud app deploy -n hello-azure -g azure-spring-cloud -s azure-spring-cloud-gs --jar-path hello-azure/build/libs/hello-azure-0.0.1-SNAPSHOT.jar
 ```
 ```json
 Command group 'spring-cloud' is in preview. It may be changed/removed in a future release.
@@ -130,7 +130,7 @@ Command group 'spring-cloud' is in preview. It may be changed/removed in a futur
 
 ##### By CLI
 ```
-$ az spring-cloud app create -n hello-azure -g azure-spring-cloud
+$ az spring-cloud app create -n hello-azure -g azure-spring-cloud -s azure-spring-cloud-gs
 ```
 
 ```json
@@ -194,7 +194,7 @@ Command group 'spring-cloud' is in preview. It may be changed/removed in a futur
 }
 ```
 ```
-$ az spring-cloud app deploy -n hello-azure -g azure-spring-cloud --jar-path hello-azure/build/libs/hello-azure-0.0.1-SNAPSHOT.jar
+$ az spring-cloud app deploy -n hello-azure -g azure-spring-cloud -s azure-spring-cloud-gs --jar-path hello-azure/build/libs/hello-azure-0.0.1-SNAPSHOT.jar
 ```
 ```json
 Command group 'spring-cloud' is in preview. It may be changed/removed in a future release.
