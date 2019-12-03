@@ -5,13 +5,14 @@ Overview
 ## Description
 
 ### Configure build.gradle
-
+#### Repository for Azure Dependency
 ```
 repositories {
 	maven { url = uri("https://oss.sonatype.org/content/repositories/snapshots") }
 }
 ```
 
+#### Dependency for Azure Sprinc Cloud
 ```
 dependencies {
 	implementation("org.springframework.cloud:spring-cloud-starter-config")
