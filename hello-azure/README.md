@@ -12,6 +12,14 @@ repositories {
 }
 ```
 
+```
+dependencies {
+	implementation("org.springframework.cloud:spring-cloud-starter-config")
+	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
+	implementation("com.microsoft.azure:spring-cloud-starter-azure-spring-cloud-client:2.1.0-SNAPSHOT")
+}
+```
+
 ## Demo
 
 ## Features
