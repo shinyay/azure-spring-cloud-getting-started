@@ -12,6 +12,17 @@ repositories {
 }
 ```
 
+#### Dependency for Spring Cloud
+```
+extra["springCloudVersion"] = "Hoxton.RC2"
+
+dependencyManagement {
+	imports {
+		mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
+	}
+}
+```
+
 #### Dependency for Azure Sprinc Cloud
 ```
 dependencies {
