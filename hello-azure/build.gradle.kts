@@ -29,6 +29,7 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-starter-config")
 	implementation("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
 	implementation("com.microsoft.azure:spring-cloud-starter-azure-spring-cloud-client:2.1.0-SNAPSHOT")
+	implementation("com.microsoft.azure:azure-cosmos:3.4.0")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
